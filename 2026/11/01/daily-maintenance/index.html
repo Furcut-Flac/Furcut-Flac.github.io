@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日常维护：修掉几个小问题 · Furcut 的小站</title>
+<meta name="author" content="Furcut">
+<meta property="og:title" content="日常维护：修掉几个小问题">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://furcut.de5.net/2026/11/01/daily-maintenance/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236366f1'/%3E%3Ctext x='50' y='70' font-size='58' font-family='system-ui,sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EF%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#ffffff; --card:#ffffff; --text:#111827; --muted:#6b7280;
+    --line:#e5e7eb; --brand:#6366f1; --brand-2:#8b5cf6; --shadow:0 10px 30px rgba(17,24,39,.08);
+  }
+  [data-theme="dark"]{
+    --bg:#0b0d12; --card:#141821; --text:#e8eaed; --muted:#9aa3b2;
+    --line:#232936; --brand:#818cf8; --brand-2:#a78bfa; --shadow:0 10px 30px rgba(0,0,0,.5);
+  }
+  @media (prefers-color-scheme: dark){
+    [data-theme="auto"]{
+      --bg:#0b0d12; --card:#141821; --text:#e8eaed; --muted:#9aa3b2;
+      --line:#232936; --brand:#818cf8; --brand-2:#a78bfa; --shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--text);line-height:1.85;
+    font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease;
+  }
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  header.nav{
+    position:sticky;top:0;z-index:20;backdrop-filter:saturate(180%) blur(14px);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;gap:18px;height:62px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text)}
+  .logo .dot{width:26px;height:26px;border-radius:9px;display:grid;place-items:center;color:#fff;font-size:14px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+  .nav-links{display:flex;gap:20px;margin-left:auto;font-size:14px;color:var(--muted)}
+  .nav-links a{color:inherit}
+  .nav-links a:hover{color:var(--text);text-decoration:none}
+  .toggle{border:1px solid var(--line);background:var(--card);color:var(--text);width:36px;height:36px;
+    border-radius:10px;cursor:pointer;font-size:15px}
+  main{padding:56px 0 60px}
+  .back{font-size:14px;color:var(--muted);display:inline-block;margin-bottom:26px}
+  .back:hover{color:var(--brand);text-decoration:none}
+  h1{font-size:clamp(30px,5vw,42px);line-height:1.25;letter-spacing:-.8px;margin:0 0 14px}
+  .meta{color:var(--muted);font-size:14px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:30px;
+    display:flex;gap:14px;flex-wrap:wrap}
+  article p{margin:1.15em 0}
+  article h2{font-size:21px;margin:2em 0 .6em;letter-spacing:-.2px}
+  article ul{padding-left:1.3em}
+  article li{margin:.4em 0}
+  article code{background:color-mix(in srgb,var(--brand) 10%,transparent);padding:2px 6px;border-radius:6px;
+    font-size:.92em;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+  .note{margin-top:34px;padding:16px 18px;border:1px solid var(--line);border-left:3px solid var(--brand);
+    border-radius:12px;background:var(--card);box-shadow:var(--shadow);font-size:14.5px;color:var(--muted)}
+  footer{padding:34px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+  .foot-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+  .foot-inner a{color:inherit}
+  .foot-inner a:hover{color:var(--brand);text-decoration:none}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="/"><span class="dot">F</span> Furcut</a>
+    <nav class="nav-links">
+      <a href="/#about">关于</a>
+      <a href="/#posts">文章</a>
+      <a href="/archives/">归档</a>
+    </nav>
+    <button class="toggle" id="themeToggle" title="切换主题">◐</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back" href="/">← 返回首页</a>
+  <h1>日常维护：修掉几个小问题</h1>
+  <div class="meta">
+    <span>2026-11-01</span>
+    <span>·</span>
+    <span>维护记录</span>
+  </div>
+
+  <article>
+    <p>11 月的第一天，把站点前后翻了一遍，顺手修掉几个一直没管的小毛病。</p>
+
+    <h2>这次改了什么</h2>
+    <ul>
+      <li><strong>移动端文章列表：</strong>日期和标题在窄屏上挤在一起，调整了断点之后改为上下排列。</li>
+      <li><strong>深色模式：</strong>正文里的行内代码块在深色背景下几乎看不清，重新调了对比度。</li>
+      <li><strong>页脚年份：</strong>之前是写死的，现在由脚本自动取当前年份，跨年不用再改。</li>
+      <li><strong>归档页：</strong>补上了返回首页的入口，之前只能靠浏览器后退。</li>
+    </ul>
+
+    <h2>一点碎碎念</h2>
+    <p>这些问题都不大，但堆在一起就很影响观感。维护这种事，还是趁想起来的时候顺手做掉比较省事。</p>
+
+    <h2>接下来</h2>
+    <p>打算把文章的排版再打磨一下，比如代码块的高亮和图片的说明文字。有进展再写。</p>
+
+    <div class="note">顺带一提：这次也预备在后面的文章里多讲点具体做法，不只是记一笔“已修复”。</div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© <span id="year">2026</span> Furcut</div>
+    <div><a href="/">首页</a> · <a href="/archives/">归档</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeToggle');
+  var saved=localStorage.getItem('theme');
+  if(saved){root.setAttribute('data-theme',saved);}
+  btn.addEventListener('click',function(){
+    var next = root.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    localStorage.setItem('theme',next);
+  });
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
